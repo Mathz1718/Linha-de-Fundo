@@ -430,3 +430,144 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+/* Texto rolando */
+.noticias-rolando {
+    background-color: #00ff5f;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 0;
+    border-bottom: 2px solid #000;
+}
+
+.texto-rolando {
+    display: inline-block;
+    padding-left: 100%;
+    animation: moverTexto 20s linear infinite;
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* Sobre o Site */
+.sobre-site {
+    background-color: #111;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 0 15px rgba(0, 255, 95, 0.1);
+    text-align: center;
+}
+
+.sobre-site h2 {
+    color: #00ff5f;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.sobre-site p {
+    color: #ccc;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* Rodapé */
+.rodape {
+    background-color: #0c0c0c;
+    color: #ccc;
+    padding: 40px 20px 20px;
+    border-top: 2px solid #00ff5f;
+    margin-top: 60px;
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.rodape-logo h2 {
+    color: #00ff5f;
+    margin-bottom: 10px;
+}
+
+.rodape-logo p {
+    color: #888;
+    max-width: 300px;
+}
+
+.rodape-links h3,
+.rodape-contato h3 {
+    color: #00ff5f;
+    margin-bottom: 10px;
+}
+
+.rodape-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rodape-links li {
+    margin-bottom: 6px;
+}
+
+.rodape-links a,
+.rodape-contato a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.rodape-links a:hover,
+.rodape-contato a:hover {
+    color: #00ff5f;
+}
+
+.rodape-copy {
+    text-align: center;
+    border-top: 1px solid #1f1f1f;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* Ícones de contato no rodapé */
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.contato-item:hover {
+    color: #00ff5f;
+}
+
+.icone-contato {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(81%) sepia(96%) saturate(1515%) hue-rotate(68deg) brightness(104%) contrast(101%);
+}
