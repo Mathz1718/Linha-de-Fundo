@@ -12,9 +12,9 @@
       <div class="logo">Linha de Fundo</div>
       <nav>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="noticias.html">Notícias</a></li>
-          <li><a href="sobre_nos.html">Sobre Nós</a></li>
+          <li><a href="index.php">Início</a></li>
+          <li><a href="noticias.php">Notícias</a></li>
+          <li><a href="sobre_nos.php">Sobre Nós</a></li>
         </ul>
       </nav>
     </header>
