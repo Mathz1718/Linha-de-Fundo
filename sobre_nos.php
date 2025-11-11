@@ -11,9 +11,9 @@
       <div class="logo">Linha de Fundo</div>
       <nav>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="noticias.html">Notícias</a></li>
-          <li><a href="sobre_nos.html" class="active">Sobre Nós</a></li>
+          <li><a href="index.php">Início</a></li>
+          <li><a href="noticias.php">Notícias</a></li>
+          <li><a href="sobre_nos.php" class="active">Sobre Nós</a></li>
         </ul>
       </nav>
     </header>
@@ -65,16 +65,6 @@
             <div class="links">
               <a href="https://github.com/Mathz1718" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/matheus-morais-0785292bb/" target="_blank">LinkedIn</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="imagens/andre.jpg" alt="André Ventura" />
-            <h3>André Ventura</h3>
-            <p class="cargo"></p>
-            <div class="links">
-              <a href="#" target="_blank">GitHub</a>
-              <a href="#" target="_blank">LinkedIn</a>
             </div>
           </div>
 
