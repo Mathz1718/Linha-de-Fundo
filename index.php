@@ -19,11 +19,11 @@
       </nav>
     </header>
 
-    <!-- Notícia destaque (agora vem logo após o menu) -->
+    <!-- Notícia destaque -->
     <main class="container">
       <h1>Top News</h1>
 
-      <!-- Texto rolando (agora em cima da imagem) -->
+      <!-- Texto rolando -->
       <div class="noticias-rolando">
         <div class="texto-rolando">
           📰 Últimas notícias: Seleção da FIFPRO é revelada! | Bragantino encara o Corinthians nesta quarta! | PSG e Bayern duelam na Champions!
@@ -46,7 +46,7 @@
       </section>
     </main>
 
-    <!-- Sobre o site (agora abaixo da notícia) -->
+    <!-- Sobre o site -->
     <section class="sobre-site">
       <h2>Sobre o Linha de Fundo</h2>
       <p>

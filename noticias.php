@@ -14,6 +14,7 @@
                 <li><a href="index.php">Início</a></li>
                 <li><a href="noticias.php" class="active">Notícias</a></li>
                 <li><a href="sobre_nos.php">Sobre Nós</a></li>
+                <li><a href="adicionar_noticia.php" class="btn-adicionar">+ Nova Notícia</a></li>
             </ul>
         </nav>
     </header>
@@ -41,58 +42,74 @@
         }
         ?>
 
-        <!-- Notícia em Destaque -->
-        <?php if($noticia_destaque): ?>
-        <section class="noticia-destaque">
-            <div class="noticia-imagem">
-                <img src="<?php echo htmlspecialchars($noticia_destaque['imagem']); ?>" alt="<?php echo htmlspecialchars($noticia_destaque['titulo']); ?>">
-            </div>
-            <div class="noticia-conteudo">
-                <span class="categoria"><?php echo htmlspecialchars($noticia_destaque['categoria']); ?></span>
-                <h1><?php echo htmlspecialchars($noticia_destaque['titulo']); ?></h1>
-                <p class="data" data-timestamp="<?php echo $noticia_destaque['data_publicacao']; ?>">
-                    <?php 
-                    $data = new DateTime($noticia_destaque['data_publicacao']);
-                    echo $data->format('d/m/Y H:i');
-                    ?>
-                </p>
-                <p class="resumo"><?php echo htmlspecialchars($noticia_destaque['resumo']); ?></p>
-                <div class="noticia-info">
-                    <span class="autor">Por: <?php echo htmlspecialchars($noticia_destaque['autor']); ?></span>
-                    <span class="fonte">Fonte: <?php echo htmlspecialchars($noticia_destaque['fonte']); ?></span>
-                </div>
-            </div>
-        </section>
-        <?php else: ?>
-            <p style="text-align: center;">Nenhuma notícia em destaque no momento.</p>
-        <?php endif; ?>
+<!-- Notícia em Destaque -->
+<?php if($noticia_destaque): ?>
+<section class="noticia-destaque">
+    <div class="noticia-imagem">
+        <img src="<?php echo htmlspecialchars($noticia_destaque['imagem']); ?>" alt="<?php echo htmlspecialchars($noticia_destaque['titulo']); ?>">
+    </div>
+    <div class="noticia-conteudo">
+        <span class="categoria"><?php echo htmlspecialchars($noticia_destaque['categoria']); ?></span>
+        <h1><?php echo htmlspecialchars($noticia_destaque['titulo']); ?></h1>
+        <p class="data" data-timestamp="<?php echo $noticia_destaque['data_publicacao']; ?>">
+            <?php 
+            $data = new DateTime($noticia_destaque['data_publicacao']);
+            echo $data->format('d/m/Y H:i');
+            ?>
+        </p>
+        <p class="resumo"><?php echo htmlspecialchars($noticia_destaque['resumo']); ?></p>
+        <div class="noticia-info">
+            <span class="autor">Por: <?php echo htmlspecialchars($noticia_destaque['autor']); ?></span>
+            <span class="fonte">Fonte: <?php echo htmlspecialchars($noticia_destaque['fonte']); ?></span>
+        </div>
+        <!-- Botões de ação -->
+        <div class="botoes-acao">
+            <a href="excluir_noticia.php?id=<?php echo $noticia_destaque['id']; ?>" 
+               class="btn-excluir" 
+               onclick="return confirm('Tem certeza que deseja excluir esta notícia?')">
+               🗑️ Excluir
+            </a>
+        </div>
+    </div>
+</section>
+<?php else: ?>
+    <p style="text-align: center;">Nenhuma notícia em destaque no momento.</p>
+<?php endif; ?>
 
-        <!-- Lista de Notícias Recentes -->
-        <section class="noticias-recentes">
-            <h2>Últimas Notícias</h2>
-            <div class="lista-noticias">
-                <?php if(count($noticias) > 0): ?>
-                    <?php foreach($noticias as $noticia): ?>
-                    <article class="noticia-pequena">
-                        <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="<?php echo htmlspecialchars($noticia['titulo']); ?>">
-                        <div class="conteudo">
-                            <span class="categoria"><?php echo htmlspecialchars($noticia['categoria']); ?></span>
-                            <h3><?php echo htmlspecialchars($noticia['titulo']); ?></h3>
-                            <p><?php echo htmlspecialchars($noticia['resumo']); ?></p>
-                            <span class="data-pequena" data-timestamp="<?php echo $noticia['data_publicacao']; ?>">
-                                <?php 
-                                $data = new DateTime($noticia['data_publicacao']);
-                                echo $data->format('d/m/Y H:i');
-                                ?>
-                            </span>
-                        </div>
-                    </article>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p style="text-align: center;">Nenhuma notícia encontrada.</p>
-                <?php endif; ?>
-            </div>
-        </section>
+<!-- Lista de Notícias Recentes -->
+<section class="noticias-recentes">
+    <h2>Últimas Notícias</h2>
+    <div class="lista-noticias">
+        <?php if(count($noticias) > 0): ?>
+            <?php foreach($noticias as $noticia): ?>
+            <article class="noticia-pequena">
+                <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="<?php echo htmlspecialchars($noticia['titulo']); ?>">
+                <div class="conteudo">
+                    <span class="categoria"><?php echo htmlspecialchars($noticia['categoria']); ?></span>
+                    <h3><?php echo htmlspecialchars($noticia['titulo']); ?></h3>
+                    <p><?php echo htmlspecialchars($noticia['resumo']); ?></p>
+                    <span class="data-pequena" data-timestamp="<?php echo $noticia['data_publicacao']; ?>">
+                        <?php 
+                        $data = new DateTime($noticia['data_publicacao']);
+                        echo $data->format('d/m/Y H:i');
+                        ?>
+                    </span>
+                    <!-- Botões de ação -->
+                    <div class="botoes-acao">
+                        <a href="excluir_noticia.php?id=<?php echo $noticia['id']; ?>" 
+                           class="btn-excluir" 
+                           onclick="return confirm('Tem certeza que deseja excluir esta notícia?')">
+                           🗑️ Excluir
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p style="text-align: center;">Nenhuma notícia encontrada.</p>
+        <?php endif; ?>
+    </div>
+</section>
     </main>
 
     <script>
